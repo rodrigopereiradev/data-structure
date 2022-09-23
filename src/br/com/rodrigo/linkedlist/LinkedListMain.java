@@ -70,5 +70,23 @@ public class LinkedListMain {
         llist.print();
 
         System.out.println("Tamanho: " + llist.count());
+
+        var merge1 = new LinkedList();
+        merge1.append(5);
+        merge1.append(10);
+        merge1.append(15);
+
+        merge1.print();
+
+        var merge2 = new LinkedList();
+        merge2.append(2);
+        merge2.append(3);
+        merge2.append(20);
+
+        merge2.print();
+
+        merge1.merge(merge2);
+
+        merge1.print();
     }
 }

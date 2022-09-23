@@ -1,7 +1,5 @@
 package br.com.rodrigo.linkedlist;
 
-import java.util.Objects;
-
 public class LinkedList {
     Node head;
 
@@ -61,7 +59,8 @@ public class LinkedList {
             temp = temp.next;
         }
 
-        previous.next = temp.next;
+        if (previous != null)
+            previous.next = temp.next;
 
     }
 
@@ -79,6 +78,7 @@ public class LinkedList {
 
         if (this.head.next == null) {
             this.head = null;
+            return;
         }
 
         Node temp = this.head;
@@ -89,7 +89,8 @@ public class LinkedList {
             temp = temp.next;
         }
 
-        previous.next = null;
+        if (previous != null)
+            previous.next = null;
     }
 
     public void deleteByPosition(int position) {
@@ -154,6 +155,45 @@ public class LinkedList {
         }
 
         this.head = previous;
+    }
+
+    public void merge(LinkedList otherLinked) {
+
+        if (otherLinked == null)
+            return;
+
+        var otherHead = otherLinked.head;
+
+        var temp = new Node(0);
+
+        var tail = temp;
+
+
+        while (true) {
+
+            if (this.head == null) {
+                tail.next = otherHead;
+                break;
+            }
+
+            if (otherHead == null) {
+                tail.next = this.head;
+                break;
+            }
+
+            if (this.head.data <= otherHead.data) {
+                tail.next = this.head;
+                this.head = this.head.next;
+            } else {
+                tail.next = otherHead;
+                otherHead = otherHead.next;
+            }
+
+            tail = tail.next;
+        }
+
+        this.head = temp.next;
+
     }
 
     public void clear() {

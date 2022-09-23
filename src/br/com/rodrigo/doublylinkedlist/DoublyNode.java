@@ -1,4 +1,4 @@
-package br.com.rodrigo.linkedlist;
+package br.com.rodrigo.doublylinkedlist;
 
 public class DoublyNode {
     int data;
@@ -8,4 +8,5 @@ public class DoublyNode {
     public DoublyNode(int data) {
         this.data = data;
     }
+
 }
