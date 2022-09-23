@@ -122,6 +122,31 @@ public class BinaryTree {
 
     }
 
+    public int size() {
+        return size(this.root);
+    }
+
+    private int size(Node node) {
+        if (node == null)
+            return 0;
+
+        return size(node.left) + 1 + size(node.right);
+    }
+
+    public int height() {
+        return maxDepth(this.root);
+    }
+
+    public int maxDepth(Node node) {
+        if (node == null)
+            return -1;
+
+        int leftDepth = maxDepth(node.left);
+        int rightDepth = maxDepth(node.right);
+
+        return leftDepth > rightDepth ? leftDepth + 1 : rightDepth + 1;
+    }
+
     public void printInOrder() {
         if (this.root == null)
             return;

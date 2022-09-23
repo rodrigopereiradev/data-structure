@@ -22,6 +22,8 @@ public class BinaryTreeMain {
         tree.insert(14);
         tree.insert(15);
 
+        System.out.println("Size: " + tree.size());
+
         tree.printInOrder();
         System.out.println();
 
@@ -30,10 +32,15 @@ public class BinaryTreeMain {
         tree.printInOrder();
         System.out.println();
 
+        System.out.println("Size: " + tree.size());
+
         tree.delete(5);
         tree.printInOrder();
         System.out.println();
 
+        System.out.println("Size: " + tree.size());
+
+        System.out.println("Height: " + tree.height());
 
     }
 
