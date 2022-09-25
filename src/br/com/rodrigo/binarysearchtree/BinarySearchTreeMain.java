@@ -26,6 +26,10 @@ public class BinarySearchTreeMain {
 
         tree.printInOrder(node);
         System.out.println();
+
+        System.out.println(tree.maxHeight());
+
+
     }
 
 }

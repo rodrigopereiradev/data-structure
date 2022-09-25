@@ -40,6 +40,32 @@ public class BinarySearchTree {
         return search(node.left, key);
     }
 
+    public int size() {
+        return size(this.root);
+    }
+
+    private int size(Node node) {
+
+        if (node == null)
+            return 0;
+
+        return size(node.left) + 1 + size(node.right);
+    }
+
+    public int maxHeight() {
+        return maxHeight(this.root);
+    }
+
+    private int maxHeight(Node node) {
+
+        if (node == null)
+            return -1;
+
+        var leftDepth = maxHeight(node.left);
+        var rightDepth = maxHeight(node.right);
+
+        return leftDepth < rightDepth ? rightDepth + 1 : leftDepth + 1;
+    }
 
     public void printInOrder() {
         if (this.root == null)
