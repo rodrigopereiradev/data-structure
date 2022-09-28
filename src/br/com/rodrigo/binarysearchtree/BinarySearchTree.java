@@ -67,6 +67,15 @@ public class BinarySearchTree {
         return leftDepth < rightDepth ? rightDepth + 1 : leftDepth + 1;
     }
 
+    public Node findTheLowersCommonAncestor(int val1, int val2) {
+        var lca = new LowestCommonAncestor();
+        return lca.findTheLowersCommonAncestorWithOneTraversal(this.root, val1, val2);
+    }
+
+    public void clear() {
+        this.root = null;
+    }
+
     public void printInOrder() {
         if (this.root == null)
             return;
