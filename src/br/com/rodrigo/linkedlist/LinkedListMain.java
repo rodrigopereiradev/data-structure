@@ -72,9 +72,9 @@ public class LinkedListMain {
         System.out.println("Tamanho: " + llist.count());
 
         var merge1 = new LinkedList();
-        merge1.append(5);
-        merge1.append(10);
+        merge1.append(-5);
         merge1.append(15);
+        merge1.append(10);
 
         merge1.print();
 
@@ -88,5 +88,33 @@ public class LinkedListMain {
         merge1.merge(merge2);
 
         merge1.print();
+
+        System.out.println();
+
+        RandomNode randomNode = null;
+        RandomLinkedList randomLinkedList = new RandomLinkedList();
+
+        var node1 = new RandomNode(1);
+        var node2 = new RandomNode(2);
+        var node3 = new RandomNode(3);
+        var node4 = new RandomNode(4);
+
+        randomNode = node1;
+        randomNode.next = node2;
+        randomNode.next.next = node3;
+        randomNode.next.next.next = node4;
+
+        randomNode.random = node4;
+        randomNode.next.random = node1;
+        randomNode.next.next.random = null;
+        randomNode.next.next.next.random = node2;
+
+        randomLinkedList.head = node1;
+        var clone = randomLinkedList.cloneLinkedList();
+
+        randomLinkedList.printList(randomLinkedList.head);
+        System.out.println();
+        randomLinkedList.printList(clone);
+
     }
 }

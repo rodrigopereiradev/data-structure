@@ -164,6 +164,8 @@ public class LinkedList {
 
         var otherHead = otherLinked.head;
 
+        System.out.println(Integer.MAX_VALUE);
+
         var temp = new Node(0);
 
         var tail = temp;
